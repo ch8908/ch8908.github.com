@@ -1,11 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://ch8908.github.com/blog/2012/10/29/hello-world/</loc>
+        <lastmod>2012-10-29T18:37:39+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ch8908.github.com/blog/2012/10/29/second-hello-world/</loc>
+        <lastmod>2012-10-29T18:26:15+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://ch8908.github.com/blog/archives/</loc>
-        <lastmod>2012-10-28T10:13:38+08:00</lastmod>
+        <lastmod>2012-10-29T18:37:39+08:00</lastmod>
     </url>
     <url>
         <loc>http://ch8908.github.com/</loc>
-        <lastmod>2012-10-28T10:13:38+08:00</lastmod>
+        <lastmod>2012-10-29T18:37:39+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ch8908.github.com/super-awesome/page.html</loc>
+        <lastmod>2012-10-29T18:27:26+08:00</lastmod>
     </url>
 </urlset>
