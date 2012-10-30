@@ -4,7 +4,7 @@
   <title><![CDATA[Thousand Squared]]></title>
   <link href="http://ch8908.github.com/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2012-10-30T18:27:50+08:00</updated>
+  <updated>2012-10-30T18:28:55+08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
     <name><![CDATA[黃千千]]></name>
@@ -18,9 +18,8 @@
     <link href="http://ch8908.github.com/blog/2012/10/30/objective-c-literalsjie-shao/"/>
     <updated>2012-10-30T18:16:00+08:00</updated>
     <id>http://ch8908.github.com/blog/2012/10/30/objective-c-literalsjie-shao</id>
-    <content type="html"><![CDATA[<p>Apple LLVM Compiler 4.0提供了新的object literal support</p>
-
-<p>讓Objective-C看起來更貼近開發人員啦！</p>
+    <content type="html"><![CDATA[<p>Apple LLVM Compiler 4.0提供了新的object literal support。
+讓Objective-C看起來更貼近開發人員啦！</p>
 
 <!-- more -->
 
