@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Objective-C | My Octopress Blog]]></title>
+  <title><![CDATA[Category: Objective-C | Thousand Squared]]></title>
   <link href="http://ch8908.github.com/blog/categories/objective-c/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2012-10-29T18:37:52+08:00</updated>
+  <updated>2012-10-30T15:37:06+08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[黃千千]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -18,7 +18,9 @@
     <link href="http://ch8908.github.com/blog/2012/10/29/hello-world/"/>
     <updated>2012-10-29T16:27:00+08:00</updated>
     <id>http://ch8908.github.com/blog/2012/10/29/hello-world</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p>Hello, this is my first post.
+Just for test.
+thank you</p>
 ]]></content>
   </entry>
   
