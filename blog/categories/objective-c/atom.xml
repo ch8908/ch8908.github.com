@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Objective-C | Thousand Squared]]></title>
   <link href="http://ch8908.github.com/blog/categories/objective-c/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2012-10-31T09:20:05+08:00</updated>
+  <updated>2012-10-31T11:59:21+08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
     <name><![CDATA[黃千千]]></name>
@@ -31,7 +31,7 @@
 </pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">NSString</span> <span class="o">*</span><span class="n">myString</span> <span class="o">=</span> <span class="s">@&quot;Thousand Squared&quot;</span><span class="p">;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>在上述的例子中，@"Thousand Squared"為一個object literal，用來代表一個NSString object。如果不使用object literal的話，程式碼會長的很不一樣。</p>
+<p>在上述的例子中，@"Thousand Squared"為一個object literal，用來代表一個<strong>NSString</strong> object。如果不使用object literal的話，程式碼會長的很不一樣。</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">NSString</span> <span class="o">*</span><span class="n">myString</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSString</span> <span class="nl">stringWithUTF8String:</span><span class="s">&quot;Thousand Squared&quot;</span><span class="p">];</span>
@@ -40,9 +40,11 @@
 <p>很明顯的可以知道，第一種寫法是比較好讀，也比較好寫的。</p>
 
 <p>而新的Apple LLVM Compiler 4.0，增加了額外的object literal。
-包含NSNumber object, Array object, Dictionary object</p>
+包含<strong>NSNumber</strong> object, <strong>NSArray</strong> object, <strong>NSDictionary</strong> object</p>
 
-<p>以NSNumber為例，</p>
+<h2>NSNumber Literals</h2>
+
+<p>以<strong>NSNumber</strong>為例:</p>
 
 <p>以下程式碼為傳統的Objective-C寫法：</p>
 
@@ -64,8 +66,9 @@
 </span><span class='line'><span class="n">NSNumber</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">goldenRatioDouble</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithDouble:</span><span class="mf">1.61803</span><span class="p">];</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>現在，我們可以用object literals改寫成：
-<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>現在，我們可以用object literals改寫成：</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -85,24 +88,117 @@
 
 <p>是不是簡單多了呢！</p>
 
-<p>Objective-C Collection Literals</p>
+<h2>Objective-C Collection Literals</h2>
 
-<p>Collection literal對objective-c來說真是不可思義的好用呀！新的LLVM Compiler有提供Array與Dictionary的collection listral，要注意的是，沒有包含sets。</p>
+<p>Collection literal對objective-c來說真是不可思意的好用呀！新的LLVM Compiler有提供Array與Dictionary的collection listral，要注意的是，沒有包含sets。</p>
 
-<p>傳統的語法建立 NSArray：
-<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<h3>NSArray Literals</h3>
+
+<p>傳統的語法建立<strong>NSArray</strong>：</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">NSArray</span> <span class="o">*</span><span class="n">instruments</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSArray</span> <span class="nl">arrayWithObjects:</span> <span class="s">@&quot;Ocarina&quot;</span><span class="p">,</span> <span class="s">@&quot;Flute&quot;</span><span class="p">,</span> <span class="s">@&quot;Harp&quot;</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>利用新的object literal方法建立NSArray：
-<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>利用新的object literal方法建立<strong>NSArray</strong>：</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">NSArray</span> <span class="o">*</span><span class="n">instruments</span> <span class="o">=</span> <span class="err">@</span><span class="p">[</span> <span class="s">@&quot;Ocarina&quot;</span><span class="p">,</span> <span class="s">@&quot;Flute&quot;</span><span class="p">,</span> <span class="s">@&quot;Harp&quot;</span> <span class="p">];</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>很可惜的是，上述語法並不支援NSMutableArray，但是我們可以利用一些小撇步來建立NSMutableArray：
-<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p>很可惜的是，上述語法並不支援<strong>NSMutableArray</strong>，但是我們可以利用一些小撇步來建立<strong>NSMutableArray</strong>：</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">NSMutableArray</span> <span class="o">*</span><span class="n">instrumentsMutable</span> <span class="o">=</span> <span class="p">[</span> <span class="err">@</span><span class="p">[</span> <span class="s">@&quot;Ocarina&quot;</span><span class="p">,</span> <span class="s">@&quot;Flute&quot;</span><span class="p">,</span> <span class="s">@&quot;Harp&quot;</span> <span class="p">]</span> <span class="n">mutableCopy</span><span class="p">];</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Dictionary Literals</h3>
+
+<p>傳統語法建立<strong>NSDictionary</strong> object：</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">NSArray</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">keys</span>   <span class="o">=</span> <span class="p">[</span><span class="n">NSArray</span> <span class="nl">arrayWithObjects:</span><span class="s">@&quot;Character&quot;</span><span class="p">,</span> <span class="s">@&quot;Weapon&quot;</span><span class="p">,</span> <span class="s">@&quot;Hitpoints&quot;</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span><span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'><span class="n">NSArray</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">objects</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSArray</span> <span class="nl">arrayWithObjects:</span><span class="s">@&quot;Zelda&quot;</span><span class="p">,</span> <span class="s">@&quot;Sword&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithInt:</span><span class="mi">50</span><span class="p">],</span> <span class="nb">nil</span><span class="p">];</span><span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span><span class='line'><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">stats</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDictionary</span> <span class="nl">dictionaryWithObjects:</span><span class="n">objects</span> <span class="nl">forKeys:</span><span class="n">keys</span><span class="p">];</span><span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>或者，可以更簡單一點：</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">stats</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDictionary</span> <span class="nl">dictionaryWithObjectsAndKeys:</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>                  <span class="s">@&quot;Zelda&quot;</span><span class="p">,</span> <span class="s">@&quot;Character&quot;</span><span class="p">,</span>
+</span><span class='line'>                  <span class="s">@&quot;Sword&quot;</span><span class="p">,</span> <span class="s">@&quot;Weapon&quot;</span><span class="p">,</span>
+</span><span class='line'>                  <span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithInt:</span><span class="mi">50</span><span class="p">],</span> <span class="s">@&quot;Hitpoints&quot;</span><span class="p">,</span>
+</span><span class='line'>                    <span class="nb">nil</span><span class="p">];</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>有了新的object literal之後，一切變得更簡單：
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">stats</span> <span class="o">=</span> <span class="err">@</span><span class="p">{</span> <span class="s">@&quot;Character&quot;</span> <span class="o">:</span> <span class="s">@&quot;Zelda&quot;</span><span class="p">,</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>                     <span class="s">@&quot;Weapon&quot;</span> <span class="o">:</span> <span class="s">@&quot;Sword&quot;</span><span class="p">,</span>
+</span><span class='line'>                     <span class="s">@&quot;Hitpoints&quot;</span> <span class="o">:</span> <span class="err">@</span><span class="mi">50</span><span class="p">};</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Collection Subscripting</h2>
+
+<p>除了利用object literal建立collection object之外，新的LLVM Compiler也提供存取collection object的方法─利用subscripts。</p>
+
+<p>傳統的語法如下：
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">NSString</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">instrument</span> <span class="o">=</span> <span class="p">[</span><span class="n">instruments</span> <span class="nl">objectAtIndex:</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'><span class="n">NSString</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="n">stats</span> <span class="nl">objectForKey:</span><span class="s">@&quot;Character&quot;</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>現在，利用新的subscripts存取collection：
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">NSString</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">instrument</span> <span class="o">=</span> <span class="n">instruments</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'><span class="n">NSString</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">name</span> <span class="o">=</span> <span class="n">stats</span><span class="p">[</span><span class="s">@&quot;Character&quot;</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>除此之外，subscripting不只只有取出資料而已，如果你的collection為mutable的型態，你也可以用它來改變元素內容。
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">instrumentsMutable</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">@&quot;Ocarina of Time&quot;</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">NSMutableDictionary</span> <span class="o">*</span><span class="n">statsMutable</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSMutableDictionary</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithDictionary:</span><span class="n">stats</span><span class="p">];</span>
+</span><span class='line'><span class="n">statsMutable</span><span class="p">[</span><span class="s">@&quot;Weapon&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">@&quot;Hammer&quot;</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>這個改變讓objective-c變得更平易近人，操作上也更直觀。</p>
+
+<h2>參考資料：</h2>
+
+<p><a href="http://mobile.tutsplus.com/tutorials/iphone/objective-c-literals/" title="Optional Title">Objective-C Literals</a> - <em>Mobile tuts+</em>.<br/>
+<a href="http://weblog.bignerdranch.com/398-objective-c-literals-part-1/" title="Optional Title">Objective-C Literals, Part 1</a> - <em>Big Nerd Ranch Weblog</em>.<br/>
+<a href="http://clang.llvm.org/docs/ObjectiveCLiterals.html" title="Optional Title">Objective-C Literals official documentation</a> - <em>LLVM Home</em>.</p>
 ]]></content>
   </entry>
   
