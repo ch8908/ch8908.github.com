@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: test | Thousand Squared]]></title>
-  <link href="http://ch8908.github.com/blog/categories/test/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Thousand Squared | Thousand Squared]]></title>
+  <link href="http://ch8908.github.com/blog/categories/thousand-squared/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2012-11-04T23:56:39+08:00</updated>
+  <updated>2012-11-05T00:41:01+08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
     <name><![CDATA[黃千千]]></name>
