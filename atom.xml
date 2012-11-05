@@ -4,7 +4,7 @@
   <title><![CDATA[Thousand Squared]]></title>
   <link href="http://ch8908.github.com/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2012-11-05T00:41:01+08:00</updated>
+  <updated>2012-11-05T13:26:16+08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
     <name><![CDATA[黃千千]]></name>
@@ -352,6 +352,11 @@ Program defensively!!! <br/>
 
 
 <p>這個改變讓objective-c變得更平易近人，操作上也更直觀。</p>
+
+<h3>結論</h3>
+
+<p>這些語法是完全<strong>向下相容</strong>的，經過compile後轉成2進位的編碼，是可以在舊的iOS環境執行的。<br/>
+因此，別再留念舊方法啦!!!</p>
 
 <h2>參考資料：</h2>
 
