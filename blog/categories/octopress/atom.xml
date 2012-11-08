@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Octopress | Thousand Squared]]></title>
+  <link href="http://ch8908.github.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://ch8908.github.com/"/>
+  <updated>2012-11-08T14:09:30+08:00</updated>
+  <id>http://ch8908.github.com/</id>
+  <author>
+    <name><![CDATA[黃千千]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress在mac上遇到的問題]]></title>
+    <link href="http://ch8908.github.com/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti/"/>
+    <updated>2012-11-06T23:26:00+08:00</updated>
+    <id>http://ch8908.github.com/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti</id>
+    <content type="html"><![CDATA[<h2>What is Octopress</h2>
+
+<p>目前我的Blog使用Octopress這套Framework。(多謝<a href="http://blog.roachking.net/" title="Optional Title">林小強</a>的推薦)<br/>
+果然蠻好用的，就如官方文件所說:</p>
+
+<blockquote><p>A blogging framework for hackers.</p></blockquote>
+
+<p>駭客級的Blog工具呀～</p>
+
+<!-- more -->
+
+
+<p>最棒的是，octopress所產生的畫面好好看呀！在mobile上也幫你做了最佳化，用手機開blog也漂漂亮亮的，awesome!</p>
+
+<p>詳細的安裝說明參考Octopress <a href="http://octopress.org/docs/" title="Optional Title">docs</a></p>
+
+<h2>Problem</h2>
+
+<p>而在mac上因為<strong>XCode</strong>的與<strong>升級Moutain Lion</strong>的關係，有可能會遇到一些小小的問題。
+那就利用此篇做個記錄，以防下次遇到相同問題還要花時間找...。</p>
+
+<h3>● 無法安裝Ruby 1.9.3</h3>
+
+<p>因為在XCode 4.2之後，clang變成預設的compiler，XCode 4.2之後不再支援gcc。而Ruby 1.9.3 -p125之後的版本才會支援clang。<br/>
+因此在安裝時有可能會跟你說：你無法安裝，請下載gcc compiler等等...</p>
+
+<p>網路上有很多的解決辦法，因為我使用<a href="http://mxcl.github.com/homebrew/" title="Optional Title">Homebrew</a>，所以我參考
+<a href="http://jfire.io/blog/2012/03/02/xcode-4-dot-3-homebrew-and-ruby/" title="Optional Title">Xcode 4.3, Homebrew, and Ruby</a>，順利解決問題。</p>
+
+<h3>● 從Lion升級到Moutain Lion時出問題</h3>
+
+<p>有一天我心血來潮把Lion升級成Moutain Lion時，發現rake無法preview...<br/>
+顯示一些錯誤檔案訊息：
+<code>
+Traceback (most recent call last):
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 565, in &lt;module&gt;
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 547, in main
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 278, in addusersitepackages
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 253, in getusersitepackages
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 243, in getuserbase
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sysconfig.py", line 523, in get_config_var
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sysconfig.py", line 419, in get_config_vars
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sysconfig.py", line 298, in _init_posix
+IOError: invalid Python installation: unable to open /usr/include/python2.7/pyconfig.h (No such file or directory)
+</code></p>
+
+<p>然後又發現無法deploy，原來連Git也不見了...0rz</p>
+
+<p>因此我參考了這篇<a href="http://www.sebastien-han.fr/blog/2012/07/26/broken-rake-after-update-to-mountain-lion/" title="Optional Title">post</a>，
+並重新安裝Git，解決了我的問題。</p>
+
+<h2>結論</h2>
+
+<p>以後遇到同樣問題就不用怕了！</p>
+
+<p>大家快來用Octopress吧！</p>
+]]></content>
+  </entry>
+  
+</feed>

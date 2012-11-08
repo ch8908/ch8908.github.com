@@ -4,7 +4,7 @@
   <title><![CDATA[Thousand Squared]]></title>
   <link href="http://ch8908.github.com/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2012-11-06T10:09:10+08:00</updated>
+  <updated>2012-11-08T14:09:30+08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
     <name><![CDATA[黃千千]]></name>
@@ -12,6 +12,80 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress在mac上遇到的問題]]></title>
+    <link href="http://ch8908.github.com/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti/"/>
+    <updated>2012-11-06T23:26:00+08:00</updated>
+    <id>http://ch8908.github.com/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti</id>
+    <content type="html"><![CDATA[<h2>What is Octopress</h2>
+
+<p>目前我的Blog使用Octopress這套Framework。(多謝<a href="http://blog.roachking.net/" title="Optional Title">林小強</a>的推薦)<br/>
+果然蠻好用的，就如官方文件所說:</p>
+
+<blockquote><p>A blogging framework for hackers.</p></blockquote>
+
+<p>駭客級的Blog工具呀～</p>
+
+<!-- more -->
+
+
+<p>最棒的是，octopress所產生的畫面好好看呀！在mobile上也幫你做了最佳化，用手機開blog也漂漂亮亮的，awesome!</p>
+
+<p>詳細的安裝說明參考Octopress <a href="http://octopress.org/docs/" title="Optional Title">docs</a></p>
+
+<h2>Problem</h2>
+
+<p>而在mac上因為<strong>XCode</strong>的與<strong>升級Moutain Lion</strong>的關係，有可能會遇到一些小小的問題。
+那就利用此篇做個記錄，以防下次遇到相同問題還要花時間找&#8230;。</p>
+
+<h3>● 無法安裝Ruby 1.9.3</h3>
+
+<p>因為在XCode 4.2之後，clang變成預設的compiler，XCode 4.2之後不再支援gcc。而Ruby 1.9.3 -p125之後的版本才會支援clang。<br/>
+因此在安裝時有可能會跟你說：你無法安裝，請下載gcc compiler等等&#8230;</p>
+
+<p>網路上有很多的解決辦法，因為我使用<a href="http://mxcl.github.com/homebrew/" title="Optional Title">Homebrew</a>，所以我參考
+<a href="http://jfire.io/blog/2012/03/02/xcode-4-dot-3-homebrew-and-ruby/" title="Optional Title">Xcode 4.3, Homebrew, and Ruby</a>，順利解決問題。</p>
+
+<h3>● 從Lion升級到Moutain Lion時出問題</h3>
+
+<p>有一天我心血來潮把Lion升級成Moutain Lion時，發現rake無法preview&#8230;<br/>
+顯示一些錯誤檔案訊息：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Traceback (most recent call last):
+</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 565, in &lt;module&gt;
+</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 547, in main
+</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 278, in addusersitepackages
+</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 253, in getusersitepackages
+</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 243, in getuserbase
+</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sysconfig.py", line 523, in get_config_var
+</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sysconfig.py", line 419, in get_config_vars
+</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sysconfig.py", line 298, in _init_posix
+</span><span class='line'>IOError: invalid Python installation: unable to open /usr/include/python2.7/pyconfig.h (No such file or directory)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然後又發現無法deploy，原來連Git也不見了&#8230;0rz</p>
+
+<p>因此我參考了這篇<a href="http://www.sebastien-han.fr/blog/2012/07/26/broken-rake-after-update-to-mountain-lion/" title="Optional Title">post</a>，
+並重新安裝Git，解決了我的問題。</p>
+
+<h2>結論</h2>
+
+<p>以後遇到同樣問題就不用怕了！</p>
+
+<p>大家快來用Octopress吧！</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Singletons in Cocoa/Objective-C]]></title>
