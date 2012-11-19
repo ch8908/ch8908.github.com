@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Thousand Squared]]></title>
   <link href="http://ch8908.github.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2012-11-19T22:23:33+08:00</updated>
+  <updated>2012-11-19T22:24:22+08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
     <name><![CDATA[黃千千]]></name>
@@ -96,8 +96,9 @@
 <h2>總結</h2>
 
 <p>我覺得pair programming真的還蠻適合用在規模不大專案的開發上。
-不僅程式品質變好，開發速度其實也是變快的(Debug時間大大變少...XD)。<br/>
-可惜pair programming在台灣老闆耳中聽起來就很像是一種增加成本的開發方式...0rz。</p>
+不僅程式品質變好，開發速度其實也是變快的(Debug時間大大變少...XD)。</p>
+
+<p>可惜pair programming在台灣老闆耳中聽起來就很像是一種增加成本的開發方式...0rz。</p>
 
 <p>如果有時間的話，就來試試Pair Programming吧。</p>
 
