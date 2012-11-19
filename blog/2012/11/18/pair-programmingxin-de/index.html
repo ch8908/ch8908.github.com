@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Thousand Squared</title>
+  <title>Pair Programming心得 - Thousand Squared</title>
   <meta name="author" content="黃千千">
 
   
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ch8908.github.com/">
+  <link rel="canonical" href="http://ch8908.github.com/blog/2012/11/18/pair-programmingxin-de/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -76,15 +76,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/11/18/pair-programmingxin-de/">Pair Programming心得</a></h1>
+      <h1 class="entry-title">Pair Programming心得</h1>
     
     
       <p class="meta">
@@ -102,14 +99,14 @@
 
 <time datetime="2012-11-18T21:43:00+08:00" pubdate data-updated="true">Nov 18<span>th</span>, 2012</time>
         
-         | <a href="/blog/2012/11/18/pair-programmingxin-de/#disqus_thread">Comments</a>
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>在上個禮拜之前，寫程式對我來說，大部分都是一個人單打獨鬥的事情。</p>
+<div class="entry-content"><p>在上個禮拜之前，寫程式對我來說，大部分都是一個人單打獨鬥的事情。</p>
 
 <p>學校作業、碩士論文，一人一份，時間到了記得交出來。<br/>
 工作時期，接案Case，一人一份，老闆覺得兩個人接同一個案子太浪費成本了！</p>
@@ -118,77 +115,98 @@
 
 <p>最近到了新環境，採用了Pair Programming，真是令我既期待又怕受傷害阿阿阿阿～</p>
 
+<!-- more -->
+
+
+<h2>什麼是Pair Programming?</h2>
+
+<p>Pair Programming來自Extreme Programming，它是Extreme Programming裡的其中一項作業。
+(<a href="http://en.wikipedia.org/wiki/Extreme_programming" title="Optional Title">Extreme Programming</a>是一種軟體開發模式，我也才剛接觸所以不太熟)</p>
+
+<p>簡單來說，就是兩個人坐在一起，配備<br/>
+<strong>- 兩個螢幕</strong><br/>
+<strong>- 兩個鍵盤</strong><br/>
+<strong>- 兩個滑鼠</strong><br/>
+<strong>- 一台主機</strong></p>
+
+<p>沒錯！一台主機，就是兩個人coding同一份程式碼！</p>
+
+<p>雖然以前有聽說過這種開發方式，但也只是聽說&#8230;</p>
+
+<p>第一次參與Pair時，就是一直看一直看，一直看Senior以飛快的速度寫程式&#8230;.<br/>
+然後換我寫時，慢的跟新手一樣，還常常打錯字，鍵盤都握不好啦&#8230;0rz</p>
+
+<p>沒想到在coding時，旁邊有人監督竟然這麼有壓力，怕變數名稱取的不好，怕打字速度太慢，怕誤會剛剛的演算法。讓我一開始pair時coding速度變很慢&#8230;。</p>
+
+<h2>Pair的好處</h2>
+
+<h4>1. 品質</h4>
+
+<p>程式的品質真的好很多。</p>
+
+<p>從最基本的變數名稱，邏輯判斷，演算法等等。一人寫程式，一人監督的概念，讓程式不會亂寫。</p>
+
+<p>該抽出來的function就抽，該定義constant就定義，該寫的註解不會漏掉，不會有多餘的if else，可讀性提高許多，而且Bug真的變少了！
+(很明顯感受到程式Compile執行後就正確無誤，真是太神奇啦！)</p>
+
+<p>對我而言，從pair上可以更快了解此專案內容。透過不斷的思考、討論、問與答，比起一個人慢慢的看code，效率要好上十幾倍呀！
+而經由senior的在旁指導，讓我學習到更多軟體開發的技巧，也少走很多的冤枉路，真是太值得了。</p>
+
+<h4>2. 專心</h4>
+
+<p>Pair互相監督討論，根本無法打混(除非兩個人一起打混&#8230;XD)。<br/>
+這陣子下來發現，Pair時會超級認真的，討論很起勁還會忘記吃飯！<br/>
+(因此Pair完也會有用腦過度的感覺&#8230;)</p>
+
+<h4>3. 維護</h4>
+
+<p>Pair雙方都對程式架構有相當程度的了解，因此不用擔心交接問題。<br/>
+這對小公司來說應該算是最實用的地方了，不會產生爛攤子而沒人收拾。</p>
+
+<h2>Pair的困擾</h2>
+
+<p>Pair時也有幾個會困擾開發者的事情：</p>
+
+<h4>1. IDE的選擇</h4>
+
+<p>有人習慣用XCode，有人習慣用Eclips、Notepad++等，這些IDE的熱鍵有時都不同，當兩個人湊在一起時，就必須向某一方妥協，總不可能一直切換IDE寫吧。
+為了有共識，我們公司統一Pair開發用IDE，也統一了熱鍵，方便開發。</p>
+
+<h4>2. 查資料時效率不好</h4>
+
+<p>寫到一半卡住，要google時，會發現兩人用一台電腦真是不好查資料&#8230;因為每個人的閱讀習慣不同，
+因此常常會一個人在查，另一個人就在發呆&#8230;。為了克服這個問題，我們還是會另外放一台筆電在旁邊，做為查資料時使用。</p>
+
+<h4>3. 作息要一致</h4>
+
+<p>若Pair的作息不同，Pair的時間就會變少了，我想這也是Pair的宿命吧。</p>
+
+<h2>總結</h2>
+
+<p>我覺得pair programming真的還蠻適合用在規模不大專案的開發上。
+不僅程式品質變好，開發速度其實也是變快的(Debug時間大大變少&#8230;XD)。<br/>
+可惜pair programming在台灣老闆耳中聽起來就很像是一種增加成本的開發方式&#8230;0rz。</p>
+
+<p>如果有時間的話，就來試試Pair Programming吧。</p>
+
+<h2>參考資料：</h2>
+
+<ol>
+<li><a href="http://en.wikipedia.org/wiki/Pair_programming" title="Optional Title">Pair Programming</a> - <em>Wiki Pair Programming</em>.</li>
+<li><a href="http://en.wikipedia.org/wiki/Extreme_programming" title="Optional Title">Extreme Programming</a> - <em>Wiki Pair Programming</em>.</li>
+</ol>
+
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/11/18/pair-programmingxin-de/">Read on &rarr;</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti/">Octopress在mac上遇到的問題</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">黃千千</span></span>
 
-<time datetime="2012-11-06T23:26:00+08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>What is Octopress</h2>
-
-<p>目前我的Blog使用Octopress這套Framework。(多謝<a href="http://blog.roachking.net/" title="Optional Title">林小強</a>的推薦)<br/>
-果然蠻好用的，就如官方文件所說:</p>
-
-<blockquote><p>A blogging framework for hackers.</p></blockquote>
-
-<p>駭客級的Blog工具呀～</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/04/singletons-in-cocoa/">Singletons in Cocoa/Objective-C</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -200,129 +218,46 @@
   
 
 
-<time datetime="2012-11-04T19:28:00+08:00" pubdate data-updated="true">Nov 4<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/11/04/singletons-in-cocoa/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>什麼是Singleton?</h2>
-
-<p>在程式設計中，singleton是常常被使用的design pattern。<br/>
-依照官方文件來解釋，它的意思是說：</p>
-
-<blockquote><p>A singleton class returns the same instance no matter how many times an application requests it.</p></blockquote>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/11/04/singletons-in-cocoa/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2012-11-18T21:43:00+08:00" pubdate data-updated="true">Nov 18<span>th</span>, 2012</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/30/objective-c-literalsjie-shao/">Objective-C Literals 介紹</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/programming/'>Programming</a>
+  
+</span>
 
 
-<time datetime="2012-10-30T18:16:00+08:00" pubdate data-updated="true">Oct 30<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/10/30/objective-c-literalsjie-shao/#disqus_thread">Comments</a>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>Apple LLVM Compiler 4.0提供了新的object literal語法。
-這篇文章會跟大家分享這新功能，讓在撰寫Objective-C時能夠有效率。
-也讓Objective-C看起來更貼近開發人員啦！</p>
-
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ch8908.github.com/blog/2012/11/18/pair-programmingxin-de/" data-via="" data-counturl="http://ch8908.github.com/blog/2012/11/18/pair-programmingxin-de/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/10/30/objective-c-literalsjie-shao/">Read on &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/29/hello-world/">Hello World</a></h1>
-    
-    
-      <p class="meta">
-        
+        <a class="basic-alignment left" href="/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti/" title="Previous Post: Octopress在mac上遇到的問題">&laquo; Octopress在mac上遇到的問題</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-29T16:27:00+08:00" pubdate data-updated="true">Oct 29<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/10/29/hello-world/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Hello, this is my first post.
-Just for test.
-thank you</p>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/10/29/hello-world/">Read on &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -368,6 +303,7 @@ thank you</p>
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -382,7 +318,10 @@ thank you</p>
       var disqus_shortname = 'thousand2';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://ch8908.github.com/blog/2012/11/18/pair-programmingxin-de/';
+        var disqus_url = 'http://ch8908.github.com/blog/2012/11/18/pair-programmingxin-de/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

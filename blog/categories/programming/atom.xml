@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Programming | Thousand Squared]]></title>
+  <link href="http://ch8908.github.com/blog/categories/programming/atom.xml" rel="self"/>
+  <link href="http://ch8908.github.com/"/>
+  <updated>2012-11-19T22:20:55+08:00</updated>
+  <id>http://ch8908.github.com/</id>
+  <author>
+    <name><![CDATA[黃千千]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Pair Programming心得]]></title>
+    <link href="http://ch8908.github.com/blog/2012/11/18/pair-programmingxin-de/"/>
+    <updated>2012-11-18T21:43:00+08:00</updated>
+    <id>http://ch8908.github.com/blog/2012/11/18/pair-programmingxin-de</id>
+    <content type="html"><![CDATA[<p>在上個禮拜之前，寫程式對我來說，大部分都是一個人單打獨鬥的事情。</p>
+
+<p>學校作業、碩士論文，一人一份，時間到了記得交出來。<br/>
+工作時期，接案Case，一人一份，老闆覺得兩個人接同一個案子太浪費成本了！</p>
+
+<p>以上的種種，讓寫程式都大部分為一個人做的事情，頂多就是問問資深人員一些架構問題等等...</p>
+
+<p>最近到了新環境，採用了Pair Programming，真是令我既期待又怕受傷害阿阿阿阿～</p>
+
+<!-- more -->
+
+
+<h2>什麼是Pair Programming?</h2>
+
+<p>Pair Programming來自Extreme Programming，它是Extreme Programming裡的其中一項作業。
+(<a href="http://en.wikipedia.org/wiki/Extreme_programming" title="Optional Title">Extreme Programming</a>是一種軟體開發模式，我也才剛接觸所以不太熟)</p>
+
+<p>簡單來說，就是兩個人坐在一起，配備<br/>
+<strong>- 兩個螢幕</strong><br/>
+<strong>- 兩個鍵盤</strong><br/>
+<strong>- 兩個滑鼠</strong><br/>
+<strong>- 一台主機</strong></p>
+
+<p>沒錯！一台主機，就是兩個人coding同一份程式碼！</p>
+
+<p>雖然以前有聽說過這種開發方式，但也只是聽說...</p>
+
+<p>第一次參與Pair時，就是一直看一直看，一直看Senior以飛快的速度寫程式....<br/>
+然後換我寫時，慢的跟新手一樣，還常常打錯字，鍵盤都握不好啦...0rz</p>
+
+<p>沒想到在coding時，旁邊有人監督竟然這麼有壓力，怕變數名稱取的不好，怕打字速度太慢，怕誤會剛剛的演算法。讓我一開始pair時coding速度變很慢...。</p>
+
+<h2>Pair的好處</h2>
+
+<h4>1. 品質</h4>
+
+<p>程式的品質真的好很多。</p>
+
+<p>從最基本的變數名稱，邏輯判斷，演算法等等。一人寫程式，一人監督的概念，讓程式不會亂寫。</p>
+
+<p>該抽出來的function就抽，該定義constant就定義，該寫的註解不會漏掉，不會有多餘的if else，可讀性提高許多，而且Bug真的變少了！
+(很明顯感受到程式Compile執行後就正確無誤，真是太神奇啦！)</p>
+
+<p>對我而言，從pair上可以更快了解此專案內容。透過不斷的思考、討論、問與答，比起一個人慢慢的看code，效率要好上十幾倍呀！
+而經由senior的在旁指導，讓我學習到更多軟體開發的技巧，也少走很多的冤枉路，真是太值得了。</p>
+
+<h4>2. 專心</h4>
+
+<p>Pair互相監督討論，根本無法打混(除非兩個人一起打混...XD)。<br/>
+這陣子下來發現，Pair時會超級認真的，討論很起勁還會忘記吃飯！<br/>
+(因此Pair完也會有用腦過度的感覺...)</p>
+
+<h4>3. 維護</h4>
+
+<p>Pair雙方都對程式架構有相當程度的了解，因此不用擔心交接問題。<br/>
+這對小公司來說應該算是最實用的地方了，不會產生爛攤子而沒人收拾。</p>
+
+<h2>Pair的困擾</h2>
+
+<p>Pair時也有幾個會困擾開發者的事情：</p>
+
+<h4>1. IDE的選擇</h4>
+
+<p>有人習慣用XCode，有人習慣用Eclips、Notepad++等，這些IDE的熱鍵有時都不同，當兩個人湊在一起時，就必須向某一方妥協，總不可能一直切換IDE寫吧。
+為了有共識，我們公司統一Pair開發用IDE，也統一了熱鍵，方便開發。</p>
+
+<h4>2. 查資料時效率不好</h4>
+
+<p>寫到一半卡住，要google時，會發現兩人用一台電腦真是不好查資料...因為每個人的閱讀習慣不同，
+因此常常會一個人在查，另一個人就在發呆...。為了克服這個問題，我們還是會另外放一台筆電在旁邊，做為查資料時使用。</p>
+
+<h4>3. 作息要一致</h4>
+
+<p>若Pair的作息不同，Pair的時間就會變少了，我想這也是Pair的宿命吧。</p>
+
+<h2>總結</h2>
+
+<p>我覺得pair programming真的還蠻適合用在規模不大專案的開發上。
+不僅程式品質變好，開發速度其實也是變快的(Debug時間大大變少...XD)。<br/>
+可惜pair programming在台灣老闆耳中聽起來就很像是一種增加成本的開發方式...0rz。</p>
+
+<p>如果有時間的話，就來試試Pair Programming吧。</p>
+
+<h2>參考資料：</h2>
+
+<ol>
+<li><a href="http://en.wikipedia.org/wiki/Pair_programming" title="Optional Title">Pair Programming</a> - <em>Wiki Pair Programming</em>.</li>
+<li><a href="http://en.wikipedia.org/wiki/Extreme_programming" title="Optional Title">Extreme Programming</a> - <em>Wiki Pair Programming</em>.</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
