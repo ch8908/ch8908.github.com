@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Thousand Squared]]></title>
   <link href="http://ch8908.github.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2012-11-19T22:20:55+08:00</updated>
+  <updated>2012-11-19T22:23:33+08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
     <name><![CDATA[黃千千]]></name>
@@ -61,9 +61,6 @@
 <p>該抽出來的function就抽，該定義constant就定義，該寫的註解不會漏掉，不會有多餘的if else，可讀性提高許多，而且Bug真的變少了！
 (很明顯感受到程式Compile執行後就正確無誤，真是太神奇啦！)</p>
 
-<p>對我而言，從pair上可以更快了解此專案內容。透過不斷的思考、討論、問與答，比起一個人慢慢的看code，效率要好上十幾倍呀！
-而經由senior的在旁指導，讓我學習到更多軟體開發的技巧，也少走很多的冤枉路，真是太值得了。</p>
-
 <h4>2. 專心</h4>
 
 <p>Pair互相監督討論，根本無法打混(除非兩個人一起打混...XD)。<br/>
@@ -74,6 +71,9 @@
 
 <p>Pair雙方都對程式架構有相當程度的了解，因此不用擔心交接問題。<br/>
 這對小公司來說應該算是最實用的地方了，不會產生爛攤子而沒人收拾。</p>
+
+<p>對我而言，從pair上可以更快了解此專案內容。透過不斷的思考、討論、問與答，比起一個人慢慢的看code，效率要好上十幾倍呀！
+而經由senior的在旁指導，讓我學習到更多軟體開發的技巧，也少走很多的冤枉路，真是太值得了。</p>
 
 <h2>Pair的困擾</h2>
 
