@@ -4,7 +4,7 @@
   <title><![CDATA[Category: iOS | Thousand Squared]]></title>
   <link href="http://ch8908.github.com/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2012-12-25T23:11:06+08:00</updated>
+  <updated>2012-12-25T23:49:52+08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
     <name><![CDATA[黃千千]]></name>
@@ -43,7 +43,7 @@
 <p>我第一隻iOS的程式是從官方網站的練習題 - <a href="https://developer.apple.com/library/ios/#referencelibrary/GettingStarted/RoadMapiOS/chapters/JumpRightIn.html" title="Optional Title">Your First iOS App</a><br/>
 除此之外還有 <a href="https://developer.apple.com/library/ios/#documentation/iPhone/Conceptual/SecondiOSAppTutorial/Introduction/Introduction.html" title="Optional Title">Your Second iOS App</a>
 跟 <a href="https://developer.apple.com/library/ios/#documentation/General/Conceptual/iCloud101/Introduction/Introduction.html" title="Optional Title">Your Third iOS App</a>
-，可以全部練習。</p>
+，全部練習完後會信心大增XDD。</p>
 
 <p>Apple的教學超用心的，教你XCode的開發環境，MVC的架構等等。每個步驟都有詳細解說，因此利用官方的範例當做第一隻App是最適合啦。</p>
 
@@ -62,7 +62,7 @@
 
 <p><a href="http://www.books.com.tw/exep/prod/booksfile.php?item=F012646361" title="Optional Title">The Big Nerd Ranch Guide (3rd Edition)</a></p>
 
-<p>大吃一驚!!!</p>
+<p>大吃一斤!!!</p>
 
 <p>這本書真是很適合初學者呀，內容圖文並茂，除了介紹怎麼開發之外，也介紹許多 Objective-C 與 Cocoa Touch 的特性，很多不知所以然的問題都有了答案，值得推薦給任何想學iOS的開發者們。</p>
 
