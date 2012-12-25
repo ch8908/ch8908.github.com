@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Octopress在mac上遇到的問題 - Thousand Squared</title>
+  <title>iOS新手上路 - Thousand Squared</title>
   <meta name="author" content="黃千千">
 
   
-  <meta name="description" content="What is Octopress 目前我的Blog使用Octopress這套Framework。(多謝林小強的推薦)
-果然蠻好用的，就如官方文件所說: A blogging framework for hackers. 駭客級的Blog工具呀～ 最棒的是，octopress所產生的畫面好好看呀！ &hellip;">
+  <meta name="description" content="從開始學習開發 iOS App 到現在差不多半年，發現 Cocoa Touch 及 Objective-C 真是一個有趣的組合，很多很酷的觀念可以學習。
+跟大家來分享一些學習的參考資料及心得囉！ 開發環境 首先，要開發iOS App，只能用 Mac OS，不像 Android 可以在 Win、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://ch8908.github.com/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti/">
+  <link rel="canonical" href="http://ch8908.github.com/blog/2012/12/25/iosxin-shou-shang-lu/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -81,7 +81,7 @@
   
   <header>
     
-      <h1 class="entry-title">Octopress在mac上遇到的問題</h1>
+      <h1 class="entry-title">iOS新手上路</h1>
     
     
       <p class="meta">
@@ -97,7 +97,7 @@
   
 
 
-<time datetime="2012-11-06T23:26:00+08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2012</time>
+<time datetime="2012-12-25T09:21:00+08:00" pubdate data-updated="true">Dec 25<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -106,72 +106,76 @@
   </header>
 
 
-<div class="entry-content"><h2>What is Octopress</h2>
+<div class="entry-content"><p><img class="center" src="http://site-macgasm.s3.amazonaws.com/wp-content/uploads/2012/03/ios-developer-deal.jpg"></p>
 
-<p>目前我的Blog使用Octopress這套Framework。(多謝<a href="http://blog.roachking.net/" title="Optional Title">林小強</a>的推薦)<br/>
-果然蠻好用的，就如官方文件所說:</p>
-
-<blockquote><p>A blogging framework for hackers.</p></blockquote>
-
-<p>駭客級的Blog工具呀～</p>
+<p>從開始學習開發 iOS App 到現在差不多半年，發現 Cocoa Touch 及 Objective-C 真是一個有趣的組合，很多很酷的觀念可以學習。
+跟大家來分享一些學習的參考資料及心得囉！</p>
 
 <!-- more -->
 
 
-<p>最棒的是，octopress所產生的畫面好好看呀！在mobile上也幫你做了最佳化，用手機開blog也漂漂亮亮的，awesome!</p>
+<h2>開發環境</h2>
 
-<p>詳細的安裝說明參考Octopress <a href="http://octopress.org/docs/" title="Optional Title">docs</a></p>
+<p>首先，要開發iOS App，只能用 Mac OS，不像 Android 可以在 Win、Linux、Mac 上開發。如果沒有mac電腦，可以利用 <a href="http://www.souldevteam.net/blog/downloads/" title="Optional Title">Virtual Machine</a> 練習一下</p>
 
-<h2>Problem</h2>
+<p>開發用的IDE就使用XCode，因為許多官方的例子都是在XCode上作解說。等到之後熟悉了，可以改用AppCode，加速開發。</p>
 
-<p>而在mac上因為<strong>XCode</strong>的與<strong>升級Moutain Lion</strong>的關係，有可能會遇到一些小小的問題。
-那就利用此篇做個記錄，以防下次遇到相同問題還要花時間找&#8230;。</p>
+<p>最後真的下定決心了，就準備買一台MacBook吧。</p>
 
-<h3>● 無法安裝Ruby 1.9.3</h3>
+<p>我買了Macbook Pro 13，因為常常要帶來帶去。另外我習慣用Programming的方法拉介面，因此不會有螢幕太小的問題XD</p>
 
-<p>因為在XCode 4.2之後，clang變成預設的compiler，XCode 4.2之後不再支援gcc。而Ruby 1.9.3 -p125之後的版本才會支援clang。<br/>
-因此在安裝時有可能會跟你說：你無法安裝，請下載gcc compiler等等&#8230;</p>
+<h2>第一隻 iOS App</h2>
 
-<p>網路上有很多的解決辦法，因為我使用<a href="http://mxcl.github.com/homebrew/" title="Optional Title">Homebrew</a>，所以我參考
-<a href="http://jfire.io/blog/2012/03/02/xcode-4-dot-3-homebrew-and-ruby/" title="Optional Title">Xcode 4.3, Homebrew, and Ruby</a>，順利解決問題。</p>
+<p>環境都架設好之後，就準備開始寫程式吧！</p>
 
-<h3>● 從Lion升級到Moutain Lion時出問題</h3>
+<p>我第一隻iOS的程式是從官方網站的練習題 - <a href="https://developer.apple.com/library/ios/#referencelibrary/GettingStarted/RoadMapiOS/chapters/JumpRightIn.html" title="Optional Title">Your First iOS App</a><br/>
+除此之外還有 <a href="https://developer.apple.com/library/ios/#documentation/iPhone/Conceptual/SecondiOSAppTutorial/Introduction/Introduction.html" title="Optional Title">Your Second iOS App</a>
+跟 <a href="https://developer.apple.com/library/ios/#documentation/General/Conceptual/iCloud101/Introduction/Introduction.html" title="Optional Title">Your Third iOS App</a>
+，可以全部練習。</p>
 
-<p>有一天我心血來潮把Lion升級成Moutain Lion時，發現rake無法preview&#8230;<br/>
-顯示一些錯誤檔案訊息：</p>
+<p>Apple的教學超用心的，教你XCode的開發環境，MVC的架構等等。每個步驟都有詳細解說，因此利用官方的範例當做第一隻App是最適合啦。</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Traceback (most recent call last):
-</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 565, in &lt;module&gt;
-</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 547, in main
-</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 278, in addusersitepackages
-</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 253, in getusersitepackages
-</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.py", line 243, in getuserbase
-</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sysconfig.py", line 523, in get_config_var
-</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sysconfig.py", line 419, in get_config_vars
-</span><span class='line'>  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sysconfig.py", line 298, in _init_posix
-</span><span class='line'>IOError: invalid Python installation: unable to open /usr/include/python2.7/pyconfig.h (No such file or directory)</span></code></pre></td></tr></table></div></figure>
+<h2>網路教學</h2>
 
+<p>網路上最有名的iOS教學就是 <a href="http://www.stanford.edu/class/cs193p/cgi-bin/drupal/downloads-2011-fall" title="Optional Title">Stanford CS193P</a>
+ 史丹佛的iOS開放式教學課程，在iTunes上都可以免費下載。</p>
 
-<p>然後又發現無法deploy，原來連Git也不見了&#8230;0rz</p>
+<p>除了有課程講義外，還有課程影片可以看唷，當然全都是英文的，不過iTunes可以開英文字幕。就不用擔心聽不懂啦。</p>
 
-<p>因此我參考了這篇<a href="http://www.sebastien-han.fr/blog/2012/07/26/broken-rake-after-update-to-mountain-lion/" title="Optional Title">post</a>，
-並重新安裝Git，解決了我的問題。</p>
+<p>Standord的白鬍子長得帥教的棒，實際的影片操作能快速熟悉XCode的開發環境，StoryBoard使用，並了解iOS開發流程。真的是很好的教學資源呀！</p>
 
-<h2>結論</h2>
+<h2>教學書籍</h2>
 
-<p>以後遇到同樣問題就不用怕了！</p>
+<p>除了看影片之外，書是一定要有的，訪間許多iOS開發的中文書籍，其實都大同小異。但有一天我在網路上看到人家推薦一本iOS開發的書籍：</p>
 
-<p>大家快來用Octopress吧！</p>
+<p><a href="http://www.books.com.tw/exep/prod/booksfile.php?item=F012646361" title="Optional Title">The Big Nerd Ranch Guide (3rd Edition)</a></p>
+
+<p>大吃一驚!!!</p>
+
+<p>這本書真是很適合初學者呀，內容圖文並茂，除了介紹怎麼開發之外，也介紹許多 Objective-C 與 Cocoa Touch 的特性，很多不知所以然的問題都有了答案，值得推薦給任何想學iOS的開發者們。</p>
+
+<h2>相關網站</h2>
+
+<p><a href="http://www.cocoacontrols.com/controls" title="Optional Title">Cocoa Controls</a>&#8211;
+有很多UI範例可以參考，再難的UI也做的出來！</p>
+
+<p><a href="http://mobile.tutsplus.com/" title="Optional Title">Mobile tuts</a>&#8211;
+不定期會有 iOS 開發教學，有進階也有初階，有空可以逛逛挖寶。</p>
+
+<p><a href="http://furnacedigital.blogspot.tw/" title="Optional Title">Furnace Digital</a>&#8211;
+少數會看的中文教學網站，內容很多還不錯。</p>
+
+<h2>學習心得</h2>
+
+<p>Objective-C 與 Cocoa Touch 其實不好上手，因為他們與一般的習慣的程式語言有點不同。所以剛開始學習進度緩慢，常常在實作時，都照著範例打，卻不知道再幹嘛。</p>
+
+<p>這點是正常的，請不用擔心，只要多練習，仔細看書本教學，自然就會開竅啦！遇到不熟的 API 怎麼辦？就直接到 stackoverflow 找吧，別浪費時間慢慢想，有時候只是因為你不知道這個 API 可以這樣用(因為 Cocoa Touch 本身就很特別)。</p>
+
+<h2>小結</h2>
+
+<p>因為行動裝置 App 的出現，讓工程師們多了一種管道可以改變世界。如果對開發實用的軟體有興趣，又喜歡iPhone、iPad，不妨考慮來學習開發iOS App吧！</p>
+
+<p>ps:Objective-C 已經變成全世界最多人使用的程式語言囉</p>
 </div>
 
 
@@ -194,12 +198,12 @@
   
 
 
-<time datetime="2012-11-06T23:26:00+08:00" pubdate data-updated="true">Nov 6<span>th</span>, 2012</time>
+<time datetime="2012-12-25T09:21:00+08:00" pubdate data-updated="true">Dec 25<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/octopress/'>Octopress</a>
+    <a class='category' href='/blog/categories/programming/'>Programming</a>, <a class='category' href='/blog/categories/ios/'>iOS</a>
   
 </span>
 
@@ -208,7 +212,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ch8908.github.com/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti/" data-via="" data-counturl="http://ch8908.github.com/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ch8908.github.com/blog/2012/12/25/iosxin-shou-shang-lu/" data-via="" data-counturl="http://ch8908.github.com/blog/2012/12/25/iosxin-shou-shang-lu/" >Tweet</a>
   
   
   
@@ -219,10 +223,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/11/04/singletons-in-cocoa/" title="Previous Post: Singletons in Cocoa/Objective-C">&laquo; Singletons in Cocoa/Objective-C</a>
+        <a class="basic-alignment left" href="/blog/2012/11/18/pair-programmingxin-de/" title="Previous Post: Pair Programming心得">&laquo; Pair Programming心得</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/11/18/pair-programmingxin-de/" title="Next Post: Pair Programming心得">Pair Programming心得 &raquo;</a>
       
     </p>
   </footer>
@@ -297,8 +299,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://ch8908.github.com/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti/';
-        var disqus_url = 'http://ch8908.github.com/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti/';
+        var disqus_identifier = 'http://ch8908.github.com/blog/2012/12/25/iosxin-shou-shang-lu/';
+        var disqus_url = 'http://ch8908.github.com/blog/2012/12/25/iosxin-shou-shang-lu/';
         var disqus_script = 'embed.js';
       
     (function () {
