@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Objective-C | Thousand Squared]]></title>
   <link href="http://ch8908.github.com/blog/categories/objective-c/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2012-12-25T23:49:52+08:00</updated>
+  <updated>2013-01-29T00:34:38-08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
     <name><![CDATA[黃千千]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Singletons in Cocoa/Objective-C]]></title>
     <link href="http://ch8908.github.com/blog/2012/11/04/singletons-in-cocoa/"/>
-    <updated>2012-11-04T19:28:00+08:00</updated>
+    <updated>2012-11-04T19:28:00-08:00</updated>
     <id>http://ch8908.github.com/blog/2012/11/04/singletons-in-cocoa</id>
     <content type="html"><![CDATA[<h2>什麼是Singleton?</h2>
 
@@ -197,7 +197,7 @@ Program defensively!!! <br/>
   <entry>
     <title type="html"><![CDATA[Objective-C Literals 介紹]]></title>
     <link href="http://ch8908.github.com/blog/2012/10/30/objective-c-literalsjie-shao/"/>
-    <updated>2012-10-30T18:16:00+08:00</updated>
+    <updated>2012-10-30T18:16:00-07:00</updated>
     <id>http://ch8908.github.com/blog/2012/10/30/objective-c-literalsjie-shao</id>
     <content type="html"><![CDATA[<p>Apple LLVM Compiler 4.0提供了新的object literal語法。
 這篇文章會跟大家分享這新功能，讓在撰寫Objective-C時能夠有效率。

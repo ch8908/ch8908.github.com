@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: iOS | Thousand Squared]]></title>
-  <link href="http://ch8908.github.com/blog/categories/ios/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Passcode | Thousand Squared]]></title>
+  <link href="http://ch8908.github.com/blog/categories/passcode/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
   <updated>2013-01-29T00:34:38-08:00</updated>
   <id>http://ch8908.github.com/</id>
@@ -162,84 +162,6 @@
 <p>很抱歉，只能重新安裝App啦XDD，不然你也可以寫一個暗鎖解開他(譬如案10次0)。</p>
 
 <p><a href="https://github.com/ch8908/Thousnad2/tree/master/PasscodeLock" title="Optional Title">View source on Github</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[iOS新手上路]]></title>
-    <link href="http://ch8908.github.com/blog/2012/12/25/iosxin-shou-shang-lu/"/>
-    <updated>2012-12-25T09:21:00-08:00</updated>
-    <id>http://ch8908.github.com/blog/2012/12/25/iosxin-shou-shang-lu</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://site-macgasm.s3.amazonaws.com/wp-content/uploads/2012/03/ios-developer-deal.jpg"></p>
-
-<p>從開始學習開發 iOS App 到現在差不多半年，發現 Cocoa Touch 及 Objective-C 真是一個有趣的組合，很多很酷的觀念可以學習。
-跟大家來分享一些學習的參考資料及心得囉！</p>
-
-<!-- more -->
-
-
-<h2>開發環境</h2>
-
-<p>首先，要開發iOS App，只能用 Mac OS，不像 Android 可以在 Win、Linux、Mac 上開發。如果沒有mac電腦，可以利用 <a href="http://www.souldevteam.net/blog/downloads/" title="Optional Title">Virtual Machine</a> 練習一下</p>
-
-<p>開發用的IDE就使用XCode，因為許多官方的例子都是在XCode上作解說。等到之後熟悉了，可以改用AppCode，加速開發。</p>
-
-<p>最後真的下定決心了，就準備買一台MacBook吧。</p>
-
-<p>我買了Macbook Pro 13，因為常常要帶來帶去。另外我習慣用Programming的方法拉介面，因此不會有螢幕太小的問題XD</p>
-
-<h2>第一隻 iOS App</h2>
-
-<p>環境都架設好之後，就準備開始寫程式吧！</p>
-
-<p>我第一隻iOS的程式是從官方網站的練習題 - <a href="https://developer.apple.com/library/ios/#referencelibrary/GettingStarted/RoadMapiOS/chapters/JumpRightIn.html" title="Optional Title">Your First iOS App</a><br/>
-除此之外還有 <a href="https://developer.apple.com/library/ios/#documentation/iPhone/Conceptual/SecondiOSAppTutorial/Introduction/Introduction.html" title="Optional Title">Your Second iOS App</a>
-跟 <a href="https://developer.apple.com/library/ios/#documentation/General/Conceptual/iCloud101/Introduction/Introduction.html" title="Optional Title">Your Third iOS App</a>
-，全部練習完後會信心大增XDD。</p>
-
-<p>Apple的教學超用心的，教你XCode的開發環境，MVC的架構等等。每個步驟都有詳細解說，因此利用官方的範例當做第一隻App是最適合啦。</p>
-
-<h2>網路教學</h2>
-
-<p>網路上最有名的iOS教學就是 <a href="http://www.stanford.edu/class/cs193p/cgi-bin/drupal/downloads-2011-fall" title="Optional Title">Stanford CS193P</a>
- 史丹佛的iOS開放式教學課程，在iTunes上都可以免費下載。</p>
-
-<p>除了有課程講義外，還有課程影片可以看唷，當然全都是英文的，不過iTunes可以開英文字幕。就不用擔心聽不懂啦。</p>
-
-<p>Standord的白鬍子長得帥教的棒，實際的影片操作能快速熟悉XCode的開發環境，StoryBoard使用，並了解iOS開發流程。真的是很好的教學資源呀！</p>
-
-<h2>教學書籍</h2>
-
-<p>除了看影片之外，書是一定要有的，訪間許多iOS開發的中文書籍，其實都大同小異。但有一天我在網路上看到人家推薦一本iOS開發的書籍：</p>
-
-<p><a href="http://www.books.com.tw/exep/prod/booksfile.php?item=F012646361" title="Optional Title">The Big Nerd Ranch Guide (3rd Edition)</a></p>
-
-<p>大吃一斤!!!</p>
-
-<p>這本書真是很適合初學者呀，內容圖文並茂，除了介紹怎麼開發之外，也介紹許多 Objective-C 與 Cocoa Touch 的特性，很多不知所以然的問題都有了答案，值得推薦給任何想學iOS的開發者們。</p>
-
-<h2>相關網站</h2>
-
-<p><a href="http://www.cocoacontrols.com/controls" title="Optional Title">Cocoa Controls</a>--
-有很多UI範例可以參考，再難的UI也做的出來！</p>
-
-<p><a href="http://mobile.tutsplus.com/" title="Optional Title">Mobile tuts</a>--
-不定期會有 iOS 開發教學，有進階也有初階，有空可以逛逛挖寶。</p>
-
-<p><a href="http://furnacedigital.blogspot.tw/" title="Optional Title">Furnace Digital</a>--
-少數會看的中文教學網站，內容很多還不錯。</p>
-
-<h2>學習心得</h2>
-
-<p>Objective-C 與 Cocoa Touch 其實不好上手，因為他們與一般的習慣的程式語言有點不同。所以剛開始學習進度緩慢，常常在實作時，都照著範例打，卻不知道再幹嘛。</p>
-
-<p>這點是正常的，請不用擔心，只要多練習，仔細看書本教學，自然就會開竅啦！遇到不熟的 API 怎麼辦？就直接到 stackoverflow 找吧，別浪費時間慢慢想，有時候只是因為你不知道這個 API 可以這樣用(因為 Cocoa Touch 本身就很特別)。</p>
-
-<h2>小結</h2>
-
-<p>因為行動裝置 App 的出現，讓工程師們多了一種管道可以改變世界。如果對開發實用的軟體有興趣，又喜歡iPhone、iPad，不妨考慮來學習開發iOS App吧！</p>
-
-<p>ps:Objective-C 已經變成全世界最多人使用的程式語言囉</p>
 ]]></content>
   </entry>
   

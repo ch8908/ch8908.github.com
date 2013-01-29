@@ -2,44 +2,48 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://ch8908.github.com/blog/2012/10/29/hello-world/</loc>
-        <lastmod>2012-11-05T00:40:24+08:00</lastmod>
+        <lastmod>2012-11-04T08:40:24-08:00</lastmod>
     </url>
     <url>
         <loc>http://ch8908.github.com/blog/2012/10/30/objective-c-literalsjie-shao/</loc>
-        <lastmod>2012-11-05T13:25:52+08:00</lastmod>
+        <lastmod>2012-11-04T21:25:52-08:00</lastmod>
     </url>
     <url>
         <loc>http://ch8908.github.com/blog/2012/11/04/singletons-in-cocoa/</loc>
-        <lastmod>2012-11-04T23:37:32+08:00</lastmod>
+        <lastmod>2012-11-04T07:37:32-08:00</lastmod>
     </url>
     <url>
         <loc>
             http://ch8908.github.com/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti/
         </loc>
-        <lastmod>2012-11-08T14:09:00+08:00</lastmod>
+        <lastmod>2012-11-07T22:09:00-08:00</lastmod>
     </url>
     <url>
         <loc>http://ch8908.github.com/blog/2012/11/18/pair-programmingxin-de/</loc>
-        <lastmod>2012-11-21T22:07:43+08:00</lastmod>
+        <lastmod>2012-11-21T06:07:43-08:00</lastmod>
     </url>
     <url>
         <loc>http://ch8908.github.com/blog/2012/12/25/iosxin-shou-shang-lu/</loc>
-        <lastmod>2012-12-25T23:49:25+08:00</lastmod>
+        <lastmod>2012-12-25T07:49:25-08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ch8908.github.com/blog/2013/01/27/passcodelock/</loc>
+        <lastmod>2013-01-29T00:32:01-08:00</lastmod>
     </url>
     <url>
         <loc>http://ch8908.github.com/blog/aboutme/</loc>
-        <lastmod>2012-12-25T23:10:01+08:00</lastmod>
+        <lastmod>2012-12-25T07:10:01-08:00</lastmod>
     </url>
     <url>
         <loc>http://ch8908.github.com/blog/archives/</loc>
-        <lastmod>2012-12-25T23:49:25+08:00</lastmod>
+        <lastmod>2013-01-29T00:32:01-08:00</lastmod>
     </url>
     <url>
         <loc>http://ch8908.github.com/</loc>
-        <lastmod>2012-12-25T23:49:25+08:00</lastmod>
+        <lastmod>2013-01-29T00:32:01-08:00</lastmod>
     </url>
     <url>
         <loc>http://ch8908.github.com/super-awesome/page.html</loc>
-        <lastmod>2012-10-29T18:27:26+08:00</lastmod>
+        <lastmod>2012-10-29T03:27:26-07:00</lastmod>
     </url>
 </urlset>

@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>PasscodeLock - Thousand Squared</title>
+  <meta name="author" content="黃千千">
+
+  
+  <meta name="description" content="前陣子實作了 PasscodeLock ，感覺還蠻有趣的，跟大家分享如何實作。 一個好的 PasscodeLock 要能夠蓋住全部的UI，像是 UIAlertView, UIActionSheet，或者是 UIImagePickerController 但利用一般的 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ch8908.github.com/blog/2013/01/27/passcodelock/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Thousand Squared" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35990647-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Thousand Squared</a></h1>
+  
+    <h2>希望能分享一些學習心得啊啊啊～～～.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ch8908.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/blog/aboutme">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">PasscodeLock</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-27T20:00:00-08:00" pubdate data-updated="true">Jan 27<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="center" src="http://modmyi.com/attachments/forums/iphone-2g-3g-3gs-ipod-touch-1g-2g-3g-new-skins-themes-launches/420999d1264371765-release-rainbow-lockscreen-passcode-lock-lockbackground12.jpg"></p>
+
+<p>前陣子實作了 PasscodeLock ，感覺還蠻有趣的，跟大家分享如何實作。</p>
+
+<p>一個好的 PasscodeLock 要能夠蓋住全部的UI，像是 UIAlertView, UIActionSheet，或者是 UIImagePickerController</p>
+
+<p>但利用一般的 UIViewController 是做不到的，因為 UIAlertView 的顯示層級最高。因此要利用另外一種方法來實作PasscodeLock─<strong>UIWindow</strong></p>
+
+<!-- more -->
+
+
+<h2>實作UIWindow</h2>
+
+<p><a href="https://github.com/ch8908/Thousnad2/tree/master/PasscodeLock" title="Optional Title">View source on Github</a></p>
+
+<p>PasscodeLock的關鍵就是：要建立另一個UIWindow。</p>
+
+<p>為什麼呢？</p>
+
+<p>因為 UIAlertView、UIActionSheet 等這些 View 其實都會建立自己的 UIWindow，也因為這樣，這些 UIAlertView 才可以顯示在最上層。
+所以當你看到 UIAlertView 時，它跟原本的 app 畫面已經在不同層次(也就是不同 UIWindow)了。所以無論你在原本的 viewController 怎麼寫，都沒有辦法覆蓋在 UIAlertView 上。</p>
+
+<p>要覆蓋住 UIAlertView，只能夠建立一個 Level 比他高的 UIWindow。<br/>
+以下是建立的程式碼：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">self</span><span class="p">.</span><span class="n">window</span> <span class="o">=</span> <span class="p">[[[</span><span class="n">UIWindow</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFrame:</span><span class="p">[</span><span class="n">UIScreen</span> <span class="n">mainScreen</span><span class="p">].</span><span class="n">bounds</span><span class="p">]</span> <span class="n">autorelease</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//set window level</span>
+</span><span class='line'><span class="n">self</span><span class="p">.</span><span class="n">window</span><span class="p">.</span><span class="n">windowLevel</span> <span class="o">=</span> <span class="n">UIWindowLevelAlert</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">self</span><span class="p">.</span><span class="n">window</span><span class="p">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="n">passcodeLockViewController</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>重點在設定 window level</p>
+
+<p>把這些值印出來就可以知道，UIWindowLevelAlert 是最大的：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>2013-01-27 22:41:04.744 PasscodeLock[28036:c07] >>>>>>>>>>UIWindowLevelAlert 2000.000000
+</span><span class='line'>2013-01-27 22:41:04.745 PasscodeLock[28036:c07] >>>>>>>>>>UIWindowLevelStatusBar 1000.000000
+</span><span class='line'>2013-01-27 22:41:04.745 PasscodeLock[28036:c07] >>>>>>>>>>UIWindowLevelNormal 0.000000</span></code></pre></td></tr></table></div></figure>
+
+
+<p>因此我們只要設定一個比 UIWindowLevelAlert 大的值就可以了，但有沒有副作用我就不知道了XD</p>
+
+<p>另外就是顯示的時候啦，有兩個部分：</p>
+
+<p>第一個部分是在</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nf">applicationDidEnterBackground:</span><span class="p">(</span><span class="n">UIApplication</span><span class="o">*</span><span class="p">)</span> <span class="n">application</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">passcodeLockWindow</span> <span class="n">show</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>當一進入背景的時候，就要先建立好 PasscodeLock，因為
+<a href="http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/ManagingYourApplicationsFlow/ManagingYourApplicationsFlow.html" title="Optional Title">Document</a>
+ 有說</p>
+
+<blockquote><p>When an app transitions to the background, the system takes a snapshot of the app’s main window, which it then presents briefly when transitioning your app back to the foreground.</p></blockquote>
+
+<p>當 app 進入背景前，系統會先截圖。等到 app 再次開啟時，就可以秀出這張截圖作為Loading時使用。</p>
+
+<p>為了避免看到未上鎖的畫面，app 進入背景時就先建立好 PasscodeLock 並顯示，等到下次開啟 app 時，就可以直接看到 PasscodeLock 的畫面。</p>
+
+<p>第二個部分在</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span> <span class="nf">application:</span><span class="p">(</span><span class="n">UIApplication</span><span class="o">*</span><span class="p">)</span> <span class="n">application</span> <span class="nl">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="n">NSDictionary</span><span class="o">*</span><span class="p">)</span> <span class="n">launchOptions</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">passcodeLockWindow</span> <span class="n">show</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>初次開啟 app 時，就要啟動 PasscodeLock。</p>
+
+<p>有了這兩個地方就可以控制 PasscodeLock 的出現與消失。</p>
+
+<h2>實作Keyboard</h2>
+
+<p>另一個部分就是實作 Keyboard ，為什麼要自己實作 Keyboard？</p>
+
+<p>因為有特例要處理，假設情境如下：</p>
+
+<blockquote><p>當你開啟密碼鎖並且在更改密碼時，突然有人打電話近來。<br/>
+等你講完電話後，開啟app，此時要輸入密碼解鎖，輸入完後會跳到更改密碼的畫面。</p></blockquote>
+
+<p>如果此時都是用原生的 Keyboard，在 iOS4 與 iOS5+ 會有不一樣的情況發生，因為 Keyboard 要在不同 UIWindow 出現。而原生的 Keyboard 是 Singlton的東西，處理起來會有一些問題。<br/>
+因此在整體效率及維護的考量之下，使用假鍵盤是最佳解(我自己覺得XD)！</p>
+
+<h2>How to use this project</h2>
+
+<h4>1. PasscodeLock畫面</h4>
+
+<p>鎖的畫面繼承 <strong>AbstractPasscodeLockViewController</strong>，其中有1個重要的 method 需要實作</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nf">onFilled:</span><span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span> <span class="n">result</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>當填滿密碼時，就會呼叫此 method，需要在此 method 判斷密碼是否正確。</p>
+
+<h4>2. 呼叫 PasscodeLock Window</h4>
+
+<p>class <strong>PasscodeLockWindow</strong> 用來建立UIWindow、顯示與隱藏 PasscodeLock window。</p>
+
+<p>要建立此 instance 來操作 PasscodeLock。</p>
+
+<h2>小結</h2>
+
+<p>這是最基本的PasscodeLock，還可以加上動畫、特效讓他看起來更炫。</p>
+
+<p>那如果忘記密碼呢？</p>
+
+<p>很抱歉，只能重新安裝App啦XDD，不然你也可以寫一個暗鎖解開他(譬如案10次0)。</p>
+
+<p><a href="https://github.com/ch8908/Thousnad2/tree/master/PasscodeLock" title="Optional Title">View source on Github</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">黃千千</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-27T20:00:00-08:00" pubdate data-updated="true">Jan 27<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/passcode/'>Passcode</a>, <a class='category' href='/blog/categories/passcodelock/'>PasscodeLock</a>, <a class='category' href='/blog/categories/ios/'>iOS</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ch8908.github.com/blog/2013/01/27/passcodelock/" data-via="" data-counturl="http://ch8908.github.com/blog/2013/01/27/passcodelock/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/12/25/iosxin-shou-shang-lu/" title="Previous Post: iOS新手上路">&laquo; iOS新手上路</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/27/passcodelock/">PasscodeLock</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/25/iosxin-shou-shang-lu/">iOS新手上路</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/18/pair-programmingxin-de/">Pair Programming心得</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/06/octopresszai-macshang-hui-yu-dao-de-wen-ti/">Octopress在mac上遇到的問題</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/04/singletons-in-cocoa/">Singletons in Cocoa/Objective-C</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+    <ul id="category-list"><li><a href='/blog/categories/cocoa'>Cocoa (1)</a></li><li><a href='/blog/categories/ios'>iOS (2)</a></li><li><a href='/blog/categories/objective-c'>Objective-C (2)</a></li><li><a href='/blog/categories/octopress'>Octopress (1)</a></li><li><a href='/blog/categories/passcode'>Passcode (1)</a></li><li><a href='/blog/categories/passcodelock'>PasscodeLock (1)</a></li><li><a href='/blog/categories/programming'>Programming (2)</a></li><li><a href='/blog/categories/thousand-squared'>Thousand Squared (1)</a></li></ul>
+</section>
+<section>
+  <h1>Link</h1>
+  <p><a href="http://blog.roachking.net/">蟑螂窩</a></p>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - 黃千千 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'thousand2';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://ch8908.github.com/blog/2013/01/27/passcodelock/';
+        var disqus_url = 'http://ch8908.github.com/blog/2013/01/27/passcodelock/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
