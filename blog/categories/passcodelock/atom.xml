@@ -4,7 +4,7 @@
   <title><![CDATA[Category: PasscodeLock | Thousand Squared]]></title>
   <link href="http://ch8908.github.com/blog/categories/passcodelock/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2013-01-29T00:34:38-08:00</updated>
+  <updated>2013-01-29T09:31:49-08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
     <name><![CDATA[黃千千]]></name>
@@ -75,7 +75,7 @@
 
 <p>另外就是顯示的時候啦，有兩個部分：</p>
 
-<p>第一個部分是在
+<p>第一個部分是在：
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -92,17 +92,17 @@
 </span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>當一進入背景的時候，就要先建立好 PasscodeLock，因為
+<p>為什麼要寫在這裡？因為當一進入背景的時候，就要先建立好 PasscodeLock，根據
 <a href="http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/ManagingYourApplicationsFlow/ManagingYourApplicationsFlow.html" title="Optional Title">Document</a>
- 有說</p>
+ 表示</p>
 
 <blockquote><p>When an app transitions to the background, the system takes a snapshot of the app’s main window, which it then presents briefly when transitioning your app back to the foreground.</p></blockquote>
 
-<p>當 app 進入背景前，系統會先截圖。等到 app 再次開啟時，就可以秀出這張截圖作為Loading時使用。</p>
+<p>上面說的是 App 進入背景時，系統會先截圖。等到 app 再次開啟時，就可以秀出這張截圖作為Loading時使用。</p>
 
-<p>為了避免看到未上鎖的畫面，app 進入背景時就先建立好 PasscodeLock 並顯示，等到下次開啟 app 時，就可以直接看到 PasscodeLock 的畫面。</p>
+<p>為了避免看到未上鎖的畫面，在 app 進入背景時就先建立好 PasscodeLock 並顯示，等到下次開啟 app 時，就可以直接看到 PasscodeLock 的畫面。</p>
 
-<p>第二個部分在
+<p>第二個部分在：
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -137,9 +137,11 @@
 
 <h2>How to use this project</h2>
 
-<h4>1. PasscodeLock畫面</h4>
+<h4>1. 建立PasscodeLock畫面</h4>
 
-<p>鎖的畫面繼承 <strong>AbstractPasscodeLockViewController</strong>，其中有1個重要的 method 需要實作</p>
+<p>因此當你需要設定密碼、更改密碼、驗證密碼時需要繼承：</p>
+
+<p><strong>AbstractPasscodeLockViewController</strong>，其中有1個重要的 method 需要實作</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nf">onFilled:</span><span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span> <span class="n">result</span>
@@ -149,7 +151,7 @@
 
 <h4>2. 呼叫 PasscodeLock Window</h4>
 
-<p>class <strong>PasscodeLockWindow</strong> 用來建立UIWindow、顯示與隱藏 PasscodeLock window。</p>
+<p>class <strong>PasscodeLockWindow</strong> 用來建立、顯示與隱藏 PasscodeLock window。</p>
 
 <p>要建立此 instance 來操作 PasscodeLock。</p>
 
