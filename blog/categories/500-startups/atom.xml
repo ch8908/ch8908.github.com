@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 500 startups | Thousand Squared]]></title>
+  <link href="http://ch8908.github.com/blog/categories/500-startups/atom.xml" rel="self"/>
+  <link href="http://ch8908.github.com/"/>
+  <updated>2013-02-21T09:22:18+08:00</updated>
+  <id>http://ch8908.github.com/</id>
+  <author>
+    <name><![CDATA[黃千千]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[500 Startups]]></title>
+    <link href="http://ch8908.github.com/blog/2013/02/21/500-startups/"/>
+    <updated>2013-02-21T06:29:00+08:00</updated>
+    <id>http://ch8908.github.com/blog/2013/02/21/500-startups</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://cdn.thenextweb.com/wp-content/blogs.dir/1/files/2012/08/500-startups-demo-day-lucharan-a-2-de-3-by-santiago-zavala-645x250.jpg"></p>
+
+<p>去年公司參加了 <a href="http://500.co/" title="Optional Title">500 Startups</a>，很幸運的，有機會能夠到美國，一起參與 500 Startups，看看這個知名的育成機構怎麼運作的。</p>
+
+<p>不過身為一個 Developer，在 500 Startups 主要還是以Coding為主，這些心得大部分都是從老闆分享或演講中得來的。
+要簡略的說一下心得嘛，那就是<strong>矽谷真是個創業的好地方</strong>呀!!!</p>
+
+<!-- more -->
+
+
+<h3>任何事業都可以 Startup</h3>
+
+<p>我原本以為 500 Startups 只收一些新創的軟體公司，或跟資料統計分析有關的。
+但是我錯了，我們這個 batch 有一組很特別是賣茶的 ─ <a href="http://www.tealet.com/" title="Optional Title">Tealet</a>
+，他們的目的在，直接跟茶農買茶，然後用實惠的價格賣給全世界愛喝茶的人。
+雖然是個 nitch market，但是 500 Startups 會利用他們的能力，讓這個東西變成 Global 的網站，如此一來就算是 nitch market，獲利能力還是很強。</p>
+
+<h3>報告很重要</h3>
+
+<p>在 500 Startups 最後的期間，都在練習 Pitch，當然這是因為有 Demo day 的關係。
+但我覺得不只是因為Demo day，藉由報告可以訓練每個團隊的表達能力。從報告中，知道自己產品的優勢，吸引人的地方為何，規劃 Business model，
+賺錢的方法等等，我想這些都是經營公司須知道的事。但另一個重點，這對新創公司籌錢也很重要，講的好讓 venture 對你也有興趣。</p>
+
+<h3>Growth Hack</h3>
+
+<p>在 500 Startups 學到最酷的東西，就是 Growth Hack。我覺得 Growth Hack 涵蓋範圍很廣，任何對產品有幫助的事情都可以算吧。</p>
+
+<h4>產品的設計</h4>
+
+<p>舉 Cubie 為例子：我們的產品為 IM App，目的要讓使用者在上面傳送訊息，對我們來說，傳送越多的訊息越好。
+因此最好的設計是，讓 App 上每一個按鈕都能夠與聊天有關，如果沒關係就拿掉或藏起來(像設定鈴聲，備份訊息等)。
+讓使用者每按一個按鈕就可以都產生一則訊息，這樣就符合我們的終極目標。</p>
+
+<h4>產品的突破點</h4>
+
+<p>這就需要長時間觀察，以及追蹤使用者習慣。
+舉例：</p>
+
+<ol>
+<li><p>像是 Twitter 研究發現，當你 Follow 超過30個人，你就比較不容易離開，
+因此，現在的 Twitter 會一直推薦你 Follow 的人選就是這個原因。</p></li>
+<li><p>假設在聊天軟體上，如果使用者傳超過6則訊息，就比較容易留下來，那就想辦法讓他剛註冊時傳送更多訊息。</p></li>
+</ol>
+
+
+<p>這些事情講的很簡單，但就是很難發現，需要透過許多的分析軟體來得知，像是 Google analytics 或
+<a href="https://mixpanel.com/" title="Optional Title">Mixpanel</a> 等。如果你發現這些事情，就朝這裡邁進吧。</p>
+
+<h4>Optimize</h4>
+
+<p>當 App 開發到一定的階段，勢必要開始 Optimize 一些功能，要從哪邊下手呢？
+就從最多人使用的地方下手吧。這看起來很直觀，但是有時候人們就是會有盲點，想去 Optimize 一些自認為很重要的東西。
+舉例就像我們老闆<a href="http://tempofeng.posterous.com/elliot-shmukler-on-so-where-should-i-start-op" title="Optional Title">Blog</a>
+說的一樣。</p>
+
+<h4>Hook</h4>
+
+<p>最後一點就是 Hook，要幫產品建立一個 Hook，Hook 這個概念我最初是在
+<a href="http://dab.tw/2012/05/11/high-density-thoughts-from-a-worlds-toughest-programmer-%E4%B8%80%E5%80%8B%E8%BB%9F%E9%AB%94%E5%A4%A9%E6%89%8D-mike-lee-%E7%9A%84%E8%AA%A0%E5%BF%83%E8%AA%A0%E6%84%8F%E9%AB%98%E5%AF%86%E5%BA%A6/" title="Optional Title">Mike</a>
+ 的訪談中看到的，以前做接案時還沒什麼感覺。現在做自己產品發現，這真的是很重要的一件事。</p>
+
+<p>什麼是 Hook？就是當人們一提到 A 就會想到 B，A 就是 B 的 Hook。簡單的說，當在 App 上提到 Endless running game，我第一個就想到 Temple run。
+當提到到記事軟體，我第一個就想 Evenote。</p>
+
+<p>這就是產品的 Hook。一旦建立了，就很難有人可以取代你。
+不過，只要你做的夠好，還是可以取代。像是一講到版本控管，我會想到 Git，而不是 SVN，因為 Git 做的太棒了(或者是時代的演進?)。</p>
+
+<p>在進一步來看，這就是一種 Flow：</p>
+
+<blockquote><p>當使用者看到有趣的事→打開Instagram→拍照→上傳→關掉Instagram</p></blockquote>
+
+<p>這就是 Instagram 給使用者的 Hook，也就是一連串 Flow，
+通常一個產品有一個 Hook (也就是一條Flow) 就會成功了。有2個以上的 Hook (多條Flow) 就是超強，
+像Facebook：我心情不爽會上Facebook，我想炫耀時會上Facebook，無聊時會上Facebook。因為他有這麼多 Hook 所以他超紅XD</p>
+
+<h3>如何籌錢</h3>
+
+<p>如何籌錢真的很有學問，我沒籌過也不太了解，大概就是以不變應萬變吧XD。另一個重點就是要盡量去認識 Venture，你都不認識人家要怎麼叫別人投資你(除非這是個爆紅的產品)。</p>
+
+<h2>小結</h2>
+
+<p>在 500 Startups 的這兩個月很開心，認識了好多人，跑了好多地方，也學到很多嶄新的事情。
+也發現創業者越來越年輕，人家26就出來創業了，我們26才剛念完研究所…QQ，真是國情不同呀。</p>
+]]></content>
+  </entry>
+  
+</feed>
