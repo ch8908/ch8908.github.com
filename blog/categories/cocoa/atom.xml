@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cocoa | Thousand Squared]]></title>
   <link href="http://ch8908.github.com/blog/categories/cocoa/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2013-01-29T09:31:49-08:00</updated>
+  <updated>2013-02-21T09:19:40+08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
     <name><![CDATA[黃千千]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Singletons in Cocoa/Objective-C]]></title>
     <link href="http://ch8908.github.com/blog/2012/11/04/singletons-in-cocoa/"/>
-    <updated>2012-11-04T19:28:00-08:00</updated>
+    <updated>2012-11-04T19:28:00+08:00</updated>
     <id>http://ch8908.github.com/blog/2012/11/04/singletons-in-cocoa</id>
     <content type="html"><![CDATA[<h2>什麼是Singleton?</h2>
 
