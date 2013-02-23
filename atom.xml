@@ -4,7 +4,7 @@
   <title><![CDATA[Thousand Squared]]></title>
   <link href="http://ch8908.github.com/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2013-02-21T09:22:18+08:00</updated>
+  <updated>2013-02-24T07:50:05+08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
     <name><![CDATA[黃千千]]></name>
@@ -38,7 +38,7 @@
 <h3>報告很重要</h3>
 
 <p>在 500 Startups 最後的期間，都在練習 Pitch，當然這是因為有 Demo day 的關係。
-但我覺得不只是因為Demo day，藉由報告可以訓練每個團隊的表達能力。從報告中，知道自己產品的優勢，吸引人的地方為何，規劃 Business model，
+但我覺得不只是因為Demo day，藉由報告可以讓每個團隊重新檢視自己。從報告中，知道自己產品的優勢，吸引人的地方為何，規劃 Business model，
 賺錢的方法等等，我想這些都是經營公司須知道的事。但另一個重點，這對新創公司籌錢也很重要，講的好讓 venture 對你也有興趣。</p>
 
 <h3>Growth Hack</h3>
@@ -70,8 +70,8 @@
 
 <p>當 App 開發到一定的階段，勢必要開始 Optimize 一些功能，要從哪邊下手呢？
 就從最多人使用的地方下手吧。這看起來很直觀，但是有時候人們就是會有盲點，想去 Optimize 一些自認為很重要的東西。
-舉例就像我們老闆<a href="http://tempofeng.posterous.com/elliot-shmukler-on-so-where-should-i-start-op" title="Optional Title">Blog</a>
-說的一樣。</p>
+另外還有一些重要的思考方式，就像我們老闆<a href="http://tempofeng.posterous.com/elliot-shmukler-on-so-where-should-i-start-op" title="Optional Title">Blog</a>
+寫的，讓使用者做他們想做的事吧。</p>
 
 <h4>Hook</h4>
 
@@ -85,22 +85,38 @@
 <p>這就是產品的 Hook。一旦建立了，就很難有人可以取代你。
 不過，只要你做的夠好，還是可以取代。像是一講到版本控管，我會想到 Git，而不是 SVN，因為 Git 做的太棒了(或者是時代的演進?)。</p>
 
-<p>在進一步來看，這就是一種 Flow：</p>
+<p>再進一步來看，這就是一種 Flow：</p>
 
 <blockquote><p>當使用者看到有趣的事→打開Instagram→拍照→上傳→關掉Instagram</p></blockquote>
 
 <p>這就是 Instagram 給使用者的 Hook，也就是一連串 Flow，
-通常一個產品有一個 Hook (也就是一條Flow) 就會成功了。有2個以上的 Hook (多條Flow) 就是超強，
+因此通常一個產品有一個 Hook (也就是一條Flow) 深入人心就會成功。有2個以上的 Hook (多條Flow) 就是超強，
 像Facebook：我心情不爽會上Facebook，我想炫耀時會上Facebook，無聊時會上Facebook。因為他有這麼多 Hook 所以他超紅XD</p>
+
+<p>這點很特別。</p>
+
+<p>在之前，我們認為做產品就是做 feature，一個產品越多的 feature 越好。我們專注的都是在要寫出使用者喜歡的 feature，或是驚為天人的 feature。
+但是在矽谷他們認為，做產品是要創造一個 Flow：</p>
+
+<blockquote><p>使用者遇 xxx 情況→打開此 App→使用 App 中的 yyy 功能→得到 zzz 結果→結束</p></blockquote>
+
+<p>而大部分的使用者對一個產品頂多記得 1、2 條 Flow，所以要專注在 Flow 上面，想辦法把這條 Flow 做到最好。
+要依照你的 Flow 去想 feature ，如果你想做的 feature 不在這個 Flow 裡面，那就不要做，沒用的擾亂原本的 Flow，或是對整個產品的幫助不大。</p>
+
+<p>這個 Flow 乍聽之下好像很直觀，我們做的產品不就都是為了要解決某個問題嘛？？
+但是真正在設計產品時，還是常常會跑到以 feature 為主的觀念，東加一個西加一個，搞的戰力都分散掉。
+這點是好是壞，真的也沒人說的準呀XD</p>
 
 <h3>如何籌錢</h3>
 
-<p>如何籌錢真的很有學問，我沒籌過也不太了解，大概就是以不變應萬變吧XD。另一個重點就是要盡量去認識 Venture，你都不認識人家要怎麼叫別人投資你(除非這是個爆紅的產品)。</p>
+<p>如何籌錢真的很有學問，我沒籌過也不太了解，不過聽老闆分享大概就是以不變應萬變吧XD。另一個重點就是要盡量去認識 Venture，你都不認識人家要怎麼叫別人投資你(除非這是個爆紅的產品)。</p>
 
 <h2>小結</h2>
 
-<p>在 500 Startups 的這兩個月很開心，認識了好多人，跑了好多地方，也學到很多嶄新的事情。
-也發現創業者越來越年輕，人家26就出來創業了，我們26才剛念完研究所…QQ，真是國情不同呀。</p>
+<p>在 500 Startups 的這兩個月很開心，認識了好多人，跑了好多地方，學到很多事情。
+雖然對技術方面沒有特別的啟發，但是對產品設計有另一種新的思維，這真是無價的經驗呀！</p>
+
+<p>最後也發現，國外的創業者越來越年輕，人家26就出來創業了，我們26才剛念完研究所…QQ，真是國情不同呀&#8230;0rz</p>
 ]]></content>
   </entry>
   
