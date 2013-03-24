@@ -4,7 +4,7 @@
   <title><![CDATA[Category: PasscodeLock | Thousand Squared]]></title>
   <link href="http://ch8908.github.com/blog/categories/passcodelock/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2013-03-13T21:38:46+08:00</updated>
+  <updated>2013-03-24T16:41:18+08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
     <name><![CDATA[黃千千]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ch8908.github.com/blog/2013/01/27/passcodelock/"/>
     <updated>2013-01-27T20:00:00+08:00</updated>
     <id>http://ch8908.github.com/blog/2013/01/27/passcodelock</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://modmyi.com/attachments/forums/iphone-2g-3g-3gs-ipod-touch-1g-2g-3g-new-skins-themes-launches/420999d1264371765-release-rainbow-lockscreen-passcode-lock-lockbackground12.jpg"></p>
+    <content type="html"><![CDATA[<p><img class="center" src="https://raw.github.com/ch8908/Thousnad2/master/PasscodeLock/demoImage.jpg"></p>
 
 <p>前陣子實作了 PasscodeLock ，感覺還蠻有趣的，跟大家分享如何實作。</p>
 

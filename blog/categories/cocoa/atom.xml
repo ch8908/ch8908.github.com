@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cocoa | Thousand Squared]]></title>
   <link href="http://ch8908.github.com/blog/categories/cocoa/atom.xml" rel="self"/>
   <link href="http://ch8908.github.com/"/>
-  <updated>2013-03-13T21:38:46+08:00</updated>
+  <updated>2013-03-24T16:41:18+08:00</updated>
   <id>http://ch8908.github.com/</id>
   <author>
     <name><![CDATA[黃千千]]></name>
@@ -12,6 +12,106 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[時間格式 PrettyFormatter]]></title>
+    <link href="http://ch8908.github.com/blog/2013/03/16/shi-jian-ge-shi/"/>
+    <updated>2013-03-16T13:22:00+08:00</updated>
+    <id>http://ch8908.github.com/blog/2013/03/16/shi-jian-ge-shi</id>
+    <content type="html"><![CDATA[<p><img class="center" src="https://raw.github.com/ch8908/Thousnad2/master/PrettyFormatter/exampleImage.png"></p>
+
+<p>前陣子在剛好在處理時間格式，研究了Twitter與Facebook等各大網站的時間格式，發現每家都不太一樣各有特色呀。</p>
+
+<p>因此決定實作做一個iOS上使用的Formatter，可以顯示 Twitter time format 或 Facebook time format。</p>
+
+<!-- more -->
+
+
+<h2>NSCalender與 NSDateComponents</h2>
+
+<p>在Cocoa上有兩個很方便的Class：<strong>NSCalender</strong> 與 <strong>NSDateComponents</strong>，可以直接把時間轉換成幾天、幾年、幾個月、幾分鐘等等。 利用這兩個 Class 我們就可以做出最基本的幾分鐘前，幾秒鐘前啦。</p>
+
+<p>宣告如下：
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">NSCalendar</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span> <span class="n">calendar</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSCalendar</span> <span class="n">currentCalendar</span><span class="p">];</span>
+</span><span class='line'><span class="n">NSDateComponents</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span> <span class="n">components</span> <span class="o">=</span> <span class="p">[</span><span class="n">calendar</span> <span class="nl">components:</span><span class="n">NSYearCalendarUnit</span> <span class="o">|</span> <span class="n">NSMonthCalendarUnit</span> <span class="o">|</span> <span class="n">NSDayCalendarUnit</span> <span class="o">|</span>
+</span><span class='line'><span class="n">NSHourCalendarUnit</span> <span class="o">|</span>  <span class="n">NSMinuteCalendarUnit</span> <span class="o">|</span>  <span class="n">NSSecondCalendarUnit</span>
+</span><span class='line'><span class="nl">fromDate:</span><span class="n">date</span> <span class="nl">toDate:</span><span class="p">[</span><span class="n">NSDate</span> <span class="n">date</span><span class="p">]</span> <span class="nl">options:</span><span class="mi">0</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>其中可以指定 <strong>NSCalendar</strong> 的單位為何：如果只要年份就只填 <strong>NSYearCalendarUnit</strong>，如果需要多種就可以串起來啦。</p>
+
+<p>使用時就可以直接找出 <strong>時間差</strong> 有多少啦，還可以指定到年月日分秒唷！</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="n">components</span><span class="p">.</span><span class="n">year</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class='line'><span class="p">{...}</span>
+</span><span class='line'><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">components</span><span class="p">.</span><span class="n">second</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class='line'><span class="p">{...}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>NSFormatter</h2>
+
+<p>另外一個常用到的 <strong>NSDateFormatter</strong> 則可以用來指定要顯示的 “時間格式”。</p>
+
+<p>新增一個 <strong>NSDateFormatter</strong></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">NSDateFormatter</span><span class="o">*</span> <span class="n">formatter</span> <span class="o">=</span> <span class="p">[[[</span><span class="n">NSDateFormatter</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">]</span> <span class="n">autorelease</span><span class="p">];</span>
+</span><span class='line'><span class="p">[</span><span class="n">formatter</span> <span class="nl">setDateFormat:</span><span class="s">@&quot;d MMM&quot;</span><span class="p">];</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>其中 setDateFormat 可以參考：<br/>
+<a href="http://unicode.org/reports/tr35/tr35-6.html#Date_Format_Patterns">Unicode Date Format Patterns</a></p>
+
+<p>舉個例子：</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">NSDateFormatter</span><span class="o">*</span> <span class="n">formatter</span> <span class="o">=</span> <span class="p">[[[</span><span class="n">NSDateFormatter</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">]</span> <span class="n">autorelease</span><span class="p">];</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="c1">//7 Mar</span>
+</span><span class='line'><span class="p">[</span><span class="n">formatter</span> <span class="nl">setDateFormat:</span><span class="s">@&quot;d MMM&quot;</span><span class="p">];</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="c1">//07 March</span>
+</span><span class='line'><span class="p">[</span><span class="n">formatter</span> <span class="nl">setDateFormat:</span><span class="s">@&quot;dd MMMM&quot;</span><span class="p">];</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="c1">//March 7 at 12:30 PM</span>
+</span><span class='line'><span class="p">[</span><span class="n">formatter</span> <span class="nl">setDateFormat:</span><span class="s">@&quot;MMMM d &#39;at&#39; h:mm a&quot;</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>小結</h2>
+
+<p>我想有了這3個Class，任何時間格式就都不是問題啦！！！</p>
+
+<p><a href="https://github.com/ch8908/Thousnad2/tree/master/PrettyFormatter" title="Optional Title">View source on Github</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Singletons in Cocoa/Objective-C]]></title>
