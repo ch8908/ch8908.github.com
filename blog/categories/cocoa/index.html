@@ -158,11 +158,56 @@
   <h1>Categories</h1>
     <ul id="category-list"><li><a href='/blog/categories/500-startups'>500 startups (1)</a></li><li><a href='/blog/categories/cocoa'>Cocoa (2)</a></li><li><a href='/blog/categories/ios'>iOS (3)</a></li><li><a href='/blog/categories/objective-c'>Objective-C (2)</a></li><li><a href='/blog/categories/octopress'>Octopress (1)</a></li><li><a href='/blog/categories/passcode'>Passcode (1)</a></li><li><a href='/blog/categories/passcodelock'>PasscodeLock (1)</a></li><li><a href='/blog/categories/programming'>Programming (2)</a></li><li><a href='/blog/categories/thousand-squared'>Thousand Squared (1)</a></li></ul>
 </section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("KrosHuang", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/KrosHuang" class="twitter-follow-button" data-show-count="false">Follow @KrosHuang</a>
+  
+</section>
+
 <section>
   <h1>Link</h1>
   <p><a href="http://blog.roachking.net/">蟑螂窩</a></p>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/ch8908">@ch8908</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'ch8908',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
 
 
 
