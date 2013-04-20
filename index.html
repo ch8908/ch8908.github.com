@@ -9,7 +9,7 @@
   <meta name="author" content="黃千千">
 
   
-  <meta name="description" content=" 前陣子在剛好在處理時間格式，研究了Twitter與Facebook等各大網站的時間格式，發現每家都不太一樣各有特色呀。 因此決定實作做一個iOS上使用的Formatter，可以顯示 Twitter time format 或 Facebook time format。 ">
+  <meta name="description" content="有時候我們希望讓 UIButton 的點擊範圍比視覺上還要大 此時可以用程式去修改 UIButton 的點擊範圍大小： 繼承 UIButton，並且去 overwrite - (UIView) hitTest:(CGPoint) point withEvent:(UIEvent) event 1 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,79 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/20/uibutton-hit-area/">增加 UIButton 的點擊範圍</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-20T14:59:00+08:00" pubdate data-updated="true">Apr 20<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/04/20/uibutton-hit-area/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>有時候我們希望讓 UIButton 的點擊範圍比視覺上還要大</p>
+
+<p>此時可以用程式去修改 UIButton 的點擊範圍大小：</p>
+
+<p>繼承 UIButton，並且去 overwrite <code> - (UIView<em>) hitTest:(CGPoint) point withEvent:(UIEvent</em>) event </code></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">@interface</span> <span class="nc">LargeAreaButton</span> : <span class="nc">UIButton</span>
+</span><span class='line'><span class="k">@end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">@implementation</span> <span class="nc">LargeAreaButton</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">-</span> <span class="p">(</span><span class="n">UIView</span><span class="o">*</span><span class="p">)</span> <span class="nf">hitTest:</span><span class="p">(</span><span class="n">CGPoint</span><span class="p">)</span> <span class="n">point</span> <span class="nl">withEvent:</span><span class="p">(</span><span class="n">UIEvent</span><span class="o">*</span><span class="p">)</span> <span class="n">event</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="c1">//設定點擊範圍的位置</span>
+</span><span class='line'>    <span class="n">CGRect</span> <span class="n">largerFrame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span> <span class="o">+</span> <span class="mi">20</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="p">(</span><span class="n">CGRectContainsPoint</span><span class="p">(</span><span class="n">largerFrame</span><span class="p">,</span> <span class="n">point</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="n">self</span> <span class="o">:</span> <span class="nb">nil</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">@end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>還蠻方便的呀！</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -519,6 +592,10 @@ thank you</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/04/20/uibutton-hit-area/">增加 UIButton 的點擊範圍</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/16/shi-jian-ge-shi/">時間格式 PrettyFormatter</a>
       </li>
     
@@ -534,15 +611,11 @@ thank you</p>
         <a href="/blog/2012/12/25/iosxin-shou-shang-lu/">iOS新手上路</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2012/11/18/pair-programmingxin-de/">Pair Programming心得</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/500-startups'>500 startups (1)</a></li><li><a href='/blog/categories/cocoa'>Cocoa (2)</a></li><li><a href='/blog/categories/ios'>iOS (3)</a></li><li><a href='/blog/categories/objective-c'>Objective-C (2)</a></li><li><a href='/blog/categories/octopress'>Octopress (1)</a></li><li><a href='/blog/categories/passcode'>Passcode (1)</a></li><li><a href='/blog/categories/passcodelock'>PasscodeLock (1)</a></li><li><a href='/blog/categories/programming'>Programming (2)</a></li><li><a href='/blog/categories/thousand-squared'>Thousand Squared (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/500-startups'>500 startups (1)</a></li><li><a href='/blog/categories/cocoa'>Cocoa (2)</a></li><li><a href='/blog/categories/ios'>iOS (3)</a></li><li><a href='/blog/categories/ios-'>iOS, (1)</a></li><li><a href='/blog/categories/objective-c'>Objective-C (2)</a></li><li><a href='/blog/categories/octopress'>Octopress (1)</a></li><li><a href='/blog/categories/passcode'>Passcode (1)</a></li><li><a href='/blog/categories/passcodelock'>PasscodeLock (1)</a></li><li><a href='/blog/categories/programming'>Programming (2)</a></li><li><a href='/blog/categories/thousand-squared'>Thousand Squared (1)</a></li><li><a href='/blog/categories/uibutton'>UIButton (1)</a></li></ul>
 </section>
 
 <section>

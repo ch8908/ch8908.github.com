@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: iOS, | Thousand Squared]]></title>
+  <link href="http://ch8908.github.com/blog/categories/ios-/atom.xml" rel="self"/>
+  <link href="http://ch8908.github.com/"/>
+  <updated>2013-04-20T16:12:11+08:00</updated>
+  <id>http://ch8908.github.com/</id>
+  <author>
+    <name><![CDATA[黃千千]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[增加 UIButton 的點擊範圍]]></title>
+    <link href="http://ch8908.github.com/blog/2013/04/20/uibutton-hit-area/"/>
+    <updated>2013-04-20T14:59:00+08:00</updated>
+    <id>http://ch8908.github.com/blog/2013/04/20/uibutton-hit-area</id>
+    <content type="html"><![CDATA[<p>有時候我們希望讓 UIButton 的點擊範圍比視覺上還要大</p>
+
+<p>此時可以用程式去修改 UIButton 的點擊範圍大小：</p>
+
+<p>繼承 UIButton，並且去 overwrite <code> - (UIView<em>) hitTest:(CGPoint) point withEvent:(UIEvent</em>) event </code></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="k">@interface</span> <span class="nc">LargeAreaButton</span> : <span class="nc">UIButton</span>
+</span><span class='line'><span class="k">@end</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">@</span><span class="n">implementation</span> <span class="n">LargeAreaButton</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">(</span><span class="n">UIView</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="p">)</span> <span class="nl">hitTest:</span><span class="p">(</span><span class="n">CGPoint</span><span class="p">)</span> <span class="n">point</span> <span class="nl">withEvent:</span><span class="p">(</span><span class="n">UIEvent</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">event</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="c1">//設定點擊範圍的位置</span>
+</span><span class='line'>  <span class="n">CGRect</span> <span class="n">largerFrame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span> <span class="o">+</span> <span class="mi">20</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">return</span> <span class="p">(</span><span class="n">CGRectContainsPoint</span><span class="p">(</span><span class="n">largerFrame</span><span class="p">,</span> <span class="n">point</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="n">self</span> <span class="o">:</span> <span class="nb">nil</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">@end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>還蠻方便的呀！</p>
+]]></content>
+  </entry>
+  
+</feed>
